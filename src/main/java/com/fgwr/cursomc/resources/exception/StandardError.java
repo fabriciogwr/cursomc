@@ -1,4 +1,4 @@
-package com.fgwr.cursomc.resources.Exceptions;
+package com.fgwr.cursomc.resources.exception;
 
 import java.io.Serializable;
 
