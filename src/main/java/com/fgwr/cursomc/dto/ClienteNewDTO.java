@@ -2,20 +2,46 @@ package com.fgwr.cursomc.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.br.CPF;
+
+import com.fgwr.cursomc.services.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@NotEmpty(message="Preenchimento automático")
+	@Size(min=5, max=120, message="O tamanho deve ser entre 5 e 120 caracteres")
 	private String nome;
+	
+	@NotEmpty(message="Preenchimento automático")
+	@Email(message="Email inválido")
 	private String email;
+	
+	@NotEmpty(message="Preenchimento automático")
+	@CPF
 	private String cpfOuCnpj;
+	
+	
 	private Integer tipo;
 	
+	@NotEmpty(message="Preenchimento automático")
 	private String logradouro;
+	
+	@NotEmpty(message="Preenchimento automático")
 	private String numero;
+	
 	private String complemento;
 	private String bairro;
+	
+	@NotEmpty(message="Preenchimento automático")
 	private String cep;
 	
+	@NotEmpty(message="Preenchimento automático")
 	private String telefone1;
 	private String telefone2;
 	private String telefone3;
